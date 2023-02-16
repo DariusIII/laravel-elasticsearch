@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Cviebrock\LaravelElasticsearch\Tests\Console\Command;
 
 use Cviebrock\LaravelElasticsearch\Tests\TestCase;
-use Elasticsearch\Client;
+use Elastic\Elasticsearch\Client;
 use Elasticsearch\Namespaces\IndicesNamespace;
 use Exception;
 use Generator;

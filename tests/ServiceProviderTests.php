@@ -3,7 +3,7 @@
 use Cviebrock\LaravelElasticsearch\Factory;
 use Cviebrock\LaravelElasticsearch\Manager;
 use Elasticsearch;
-use Elasticsearch\Client;
+use Elastic\Elasticsearch\Client;
 
 
 class ServiceProviderTests extends TestCase
