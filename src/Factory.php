@@ -2,11 +2,11 @@
 
 namespace Cviebrock\LaravelElasticsearch;
 
-use Elasticsearch\Client;
-use Elasticsearch\ClientBuilder;
+use Elastic\Elasticsearch\Client;
+use Elastic\Elasticsearch\ClientBuilder;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Uri;
-use GuzzleHttp\Ring\Future\CompletedFutureArray;
+use Guzzle\RingPHP\Future\CompletedFutureArray;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Reflector;
 use Psr\Http\Message\ResponseInterface;
@@ -42,7 +42,7 @@ class Factory
      *
      * @param array $config
      *
-     * @return \Elasticsearch\Client
+     * @return \Elastic\Elasticsearch\Client
      */
     public function make(array $config): Client
     {
@@ -54,7 +54,8 @@ class Factory
      *
      * @param array $config
      *
-     * @return \Elasticsearch\Client
+     * @return \Elastic\Elasticsearch\Client
+     * @throws \Elastic\Elasticsearch\Exception\AuthenticationException
      */
     protected function buildClient(array $config): Client
     {
