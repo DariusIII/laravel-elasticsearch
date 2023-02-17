@@ -87,6 +87,12 @@ class Factory
         }
 
         // Build and return the client
+        if (!empty($config['hosts']['api_id']) && !empty($config['hosts']['api_key'])
+        ) {
+            $clientBuilder->setApiKey($config['hosts']['api_id'], $config['hosts']['api_key']);
+        }
+
+        // Build and return the client
         return $clientBuilder->build();
     }
 }
