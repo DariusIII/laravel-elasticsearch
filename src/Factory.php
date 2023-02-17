@@ -58,7 +58,7 @@ class Factory
 
         // Configure hosts
         $clientBuilder->setHosts($config['hosts']);
-        $clientBuilder->setBasicAuthentication($config['basicAuthentication']);
+        $clientBuilder->setBasicAuthentication($config['basicAuthentication']['user'], $config['basicAuthentication']['pass']);
 
         // Configure logging
         if (Arr::get($config, 'logging')) {

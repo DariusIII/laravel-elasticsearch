@@ -45,7 +45,8 @@ return [
                     // If you are connecting to an Elasticsearch instance on AWS, you probably want to set this to null
                 ],
             'basicAuthentication' => [
-                env('ELASTICSEARCH_USER', null), env('ELASTICSEARCH_PASS', null)
+                'user' => env('ELASTICSEARCH_USER', null),
+                'pass' => env('ELASTICSEARCH_PASS', null)
             ],
             'cloud_api' => [
                 // Alternatively, you can log in via API keys
