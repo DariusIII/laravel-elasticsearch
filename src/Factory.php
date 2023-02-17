@@ -58,6 +58,7 @@ class Factory
 
         // Configure hosts
         $clientBuilder->setHosts($config['hosts']);
+        $clientBuilder->setBasicAuthentication($config['basicAuthentication']);
 
         // Configure logging
         if (Arr::get($config, 'logging')) {
@@ -87,9 +88,9 @@ class Factory
         }
 
         // Build and return the client
-        if (!empty($config['hosts']['api_id']) && !empty($config['hosts']['api_key'])
+        if (!empty($config['cloud_api']['api_id']) && !empty($config['cloud_api']['api_key'])
         ) {
-            $clientBuilder->setApiKey($config['hosts']['api_id'], $config['hosts']['api_key']);
+            $clientBuilder->setElasticCloudId($config['cloud_api']['api_id'])->setApiKey($config['cloud_api']['api_key']);
         }
 
         // Build and return the client
